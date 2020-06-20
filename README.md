@@ -2,6 +2,66 @@
 
 
 - Type  :quit<Enter>  to exit Vim
+    
+    
+# Managing Users in Linux
+
+- Add the Users to the Server
+
+    To add users to the system we can run 
+
+    useradd <username>
+
+    So we would run
+
+    useradd tstark
+
+    useradd cdanvers
+
+    useradd dprince
+
+
+- Create the `superhero` Group
+
+ 
+    To create a new group we would run
+
+    groupadd <groupname>
+
+    So for this task
+
+    groupadd superhero
+
+
+- Set `wheel` Group as the the `tstark` Account's Primary Group
+
+    For this task we would run usermod like this
+
+    usermod -g wheel tstark
+
+
+- Add `superhero` as a Supplementary Group on All Three Users
+
+    There isn't an easy way to do this all at once, so we need to run the following command for each user
+
+    usermod -aG superhero <username>
+
+    So
+
+    usermod -aG superhero tstark
+
+    usermod -aG superhero dprince
+
+    usermod -aG superhero cdanvers
+
+- Lock the `dprince` Account
+
+     To lock an account all we have to do is run:
+
+    usermod -L dprince
+
+
+# ----------------------------------------------------------------
 
 
 # Create New sudo Users
